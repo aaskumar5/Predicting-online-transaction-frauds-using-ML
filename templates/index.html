@@ -14,20 +14,30 @@
 
 <body>
  <div class="login">
-	<h1>Predict Salary Analysis</h1>
-
-     <!-- Main Input For Receiving Query to our ML -->
+	<h2>Fraud Transcation Detection</h2>
+     
+   {{ prediction_text }}
+    <br>
+    <br>
+     
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="experience" placeholder="Experience" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
-		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+        
+        <input type="number" name="Average Amount/transcation/day"  placeholder="Avg Amount" required="required" />
+        <input type="number" name="transcation amount" placeholder="transcation Amount" required="required" />
+        <input type="number" name="Is declined" placeholder=" Is declined 1/0 yes->1 No->0" required="required" />
+        <input type="number" name="Total no of transcation/day" placeholder="Total transcation per day" required="required" />
+        <input type="number" name="isForeignTransaction" placeholder="isForeignTransaction 1/0 yes->1 No->0" required="required" />
+        <input type="number" name="isHighRiskCountry" placeholder="isHighRiskCountry 1/0 yes->1 No->0" required="required" />
+    	  <input type="number" name="Daily_chargeback_avg_amt" placeholder="Daily_chargeback_avg_amt" required="required" />
+    	  <input type="number" name="6_month_avg_chbk_amt" placeholder="6_month_avg_chbk_amt" required="required" />
+    	  <input type="number" name="6-month_chbk_freq" placeholder="6-month_chbk_freq" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
-   <br>
-   <br>
-   {{ prediction_text }}
+   <!-- <br> -->
+   <!-- <br>
+   {{ prediction_text }} -->
 
  </div>
 
